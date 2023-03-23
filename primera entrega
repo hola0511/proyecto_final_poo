@@ -1,0 +1,56 @@
+class Usuario:
+  def __init__(self, id, nombre, correo):
+    self.id = id
+    self.nombre = nombre
+    self.correo = correo
+    self.generos_interes = []
+
+  def elegirGenero(self, genero):
+    self.generos_interes.append(genero)
+
+  def calificar(self, pelicula_serie, puntuacion):
+    recomendacion = Recomendacion(self, pelicula_serie, puntuacion)
+    return recomendacion
+
+
+class Genero:
+  def __init__(self, id, nombre):
+    self.id = id
+    self.nombre = nombre
+
+  def obtenerPelículas(self):
+     
+    pass
+
+
+ class PeliculaSerie:
+  def __init__(self, id, titulo, generos):
+    self.id = id
+    self.titulo = titulo
+    self.generos = generos
+    self.puntuacion = 0.0
+
+  def obtenerTitulo(self):
+    return self.titulo
+
+  def obtenerGeneros(self):
+    return self.generos
+
+  def obtenerPuntuacion(self):
+    return self.puntuacion
+
+
+class Recomendacion:
+  def __init__(self, usuario, pelicula_serie, puntuacion):
+    self.usuario = usuario
+    self.pelicula_serie = pelicula_serie
+    self.puntuacion = puntuacion
+
+  def obtenerUsuario(self):
+     return self.usuario
+
+  def obtenerPelicula(self):
+     return self.pelicula_serie
+
+  def obtenerPuntuacion(self):
+     return self.puntuacion
